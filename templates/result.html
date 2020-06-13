@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Spam SMS Detector</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='spam-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="static/styles.css">
+
+	</head>
+
+	<body>
+
+		<!-- Website Title -->
+		<div class="container">
+			<h2 class='container-heading'><span>Spam Text Detector</span> for Short Message Service (SMS)</h2>
+	        	<div class='description'>
+				<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+			</div>
+		</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='danger'>This is a SPAM message.</span></h1>
+                <img class="gif" src="static/Spam.gif" alt="SPAM Image">
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='safe'>This is NOT a spam message.</span></h1>
+                <img class="gif" src="static/Not Spam.gif" alt="Not a spam image">
+			{% endif %}
+		</div>
+
+
+
+		<!-- Footer -->
+        <div class='footer'>
+
+            <p class='footer-description'>Made with ❤️ by Shantanu Bisht.</p>
+        </div>
+
+	</body>
+</html>
